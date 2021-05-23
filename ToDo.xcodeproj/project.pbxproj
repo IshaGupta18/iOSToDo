@@ -16,6 +16,10 @@
 		CC7BB97426590FAB007CBA00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7BB97326590FAB007CBA00 /* main.m */; };
 		CC7BB97E26590FAB007CBA00 /* ToDoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7BB97D26590FAB007CBA00 /* ToDoTests.m */; };
 		CC7BB98926590FAB007CBA00 /* ToDoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7BB98826590FAB007CBA00 /* ToDoUITests.m */; };
+		CC7BB998265910D8007CBA00 /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7BB997265910D8007CBA00 /* AVFAudio.framework */; };
+		CC7BB99B2659316B007CBA00 /* ToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7BB99A2659316B007CBA00 /* ToDoItem.m */; };
+		CC7BB99E26593598007CBA00 /* ToDoItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7BB99D26593598007CBA00 /* ToDoItemCell.m */; };
+		CC7BB9A1265950F8007CBA00 /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7BB9A0265950F8007CBA00 /* AddItemViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,13 @@
 		CC7BB98426590FAB007CBA00 /* ToDoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7BB98826590FAB007CBA00 /* ToDoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoUITests.m; sourceTree = "<group>"; };
 		CC7BB98A26590FAB007CBA00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC7BB997265910D8007CBA00 /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = System/Library/Frameworks/AVFAudio.framework; sourceTree = SDKROOT; };
+		CC7BB9992659316B007CBA00 /* ToDoItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToDoItem.h; sourceTree = "<group>"; };
+		CC7BB99A2659316B007CBA00 /* ToDoItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoItem.m; sourceTree = "<group>"; };
+		CC7BB99C26593598007CBA00 /* ToDoItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToDoItemCell.h; sourceTree = "<group>"; };
+		CC7BB99D26593598007CBA00 /* ToDoItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoItemCell.m; sourceTree = "<group>"; };
+		CC7BB99F265950F8007CBA00 /* AddItemViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddItemViewController.h; sourceTree = "<group>"; };
+		CC7BB9A0265950F8007CBA00 /* AddItemViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddItemViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC7BB998265910D8007CBA00 /* AVFAudio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +100,7 @@
 				CC7BB97C26590FAB007CBA00 /* ToDoTests */,
 				CC7BB98726590FAB007CBA00 /* ToDoUITests */,
 				CC7BB95F26590FA9007CBA00 /* Products */,
+				CC7BB996265910D8007CBA00 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +128,12 @@
 				CC7BB96F26590FAB007CBA00 /* LaunchScreen.storyboard */,
 				CC7BB97226590FAB007CBA00 /* Info.plist */,
 				CC7BB97326590FAB007CBA00 /* main.m */,
+				CC7BB9992659316B007CBA00 /* ToDoItem.h */,
+				CC7BB99A2659316B007CBA00 /* ToDoItem.m */,
+				CC7BB99C26593598007CBA00 /* ToDoItemCell.h */,
+				CC7BB99D26593598007CBA00 /* ToDoItemCell.m */,
+				CC7BB99F265950F8007CBA00 /* AddItemViewController.h */,
+				CC7BB9A0265950F8007CBA00 /* AddItemViewController.m */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -135,6 +154,14 @@
 				CC7BB98A26590FAB007CBA00 /* Info.plist */,
 			);
 			path = ToDoUITests;
+			sourceTree = "<group>";
+		};
+		CC7BB996265910D8007CBA00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC7BB997265910D8007CBA00 /* AVFAudio.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,8 +294,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC7BB96926590FA9007CBA00 /* ViewController.m in Sources */,
+				CC7BB99B2659316B007CBA00 /* ToDoItem.m in Sources */,
+				CC7BB9A1265950F8007CBA00 /* AddItemViewController.m in Sources */,
 				CC7BB96326590FA9007CBA00 /* AppDelegate.m in Sources */,
 				CC7BB97426590FAB007CBA00 /* main.m in Sources */,
+				CC7BB99E26593598007CBA00 /* ToDoItemCell.m in Sources */,
 				CC7BB96626590FA9007CBA00 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
