@@ -8,10 +8,12 @@
 #import "ViewController.h"
 #import "ToDoItem.h"
 #import "ToDoItemCell.h"
+#import "ToDoItemList.h"
 
 @interface ViewController ()
 
 @property (strong, nonatomic) NSMutableArray<ToDoItem*> *todos;
+@property ToDoItemList* toDoItemList;
 @property NSArray<NSString*> *sortValues;
 @property NSString* sortValue;
 
@@ -29,6 +31,7 @@
     
     // todos: list to manage the current todos
     self.todos = [[NSMutableArray alloc] init];
+    self.toDoItemList = [ToDoItemList new];
     
     // sortByPicker: UIViewPicker to select a sort filter
     self.sortByPicker.dataSource = self;
@@ -40,7 +43,8 @@
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.todos.count;
+    return [self.toDoItemList getLengthOfList];
+//    return self.todos.count;
 }
 
 /*
@@ -48,7 +52,8 @@
  */
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ToDoItemCell *cell = (ToDoItemCell*) [tableView dequeueReusableCellWithIdentifier:@"todo" forIndexPath: indexPath];
-    ToDoItem *item = [self.todos objectAtIndex: (NSInteger) indexPath.item];
+//    ToDoItem *item = [self.todos objectAtIndex: (NSInteger) indexPath.item];
+    ToDoItem *item = [self.toDoItemList getItemAtIndex: (NSInteger) indexPath.item];
     cell.itemTitle.text = item.title;
     cell.priority.text = item.priority;
     cell.timeToComplete.text = [NSString stringWithFormat:@"%li Hours", (long)item.timeToComplete];
@@ -79,7 +84,8 @@
     self.sortValue = [self.sortValues objectAtIndex:row];
     dispatch_async(dispatch_get_main_queue(), ^(void){
         NSArray* sortedArray = [self sortAccordingToType];
-        self.todos = [NSMutableArray arrayWithArray:sortedArray];
+//        self.todos = [NSMutableArray arrayWithArray:sortedArray];
+        [self.toDoItemList setItemListNewValue:sortedArray];
         [self.todoList reloadData];
     });
     NSLog(@"Selected Value %@", self.sortValue);
@@ -115,7 +121,8 @@
 - (NSArray*) sortAccordingToType {
     NSSortDescriptor *ds = [NSSortDescriptor new];
     if ([self.sortValue isEqual:@"None"]){
-        return self.todos;
+        return [self.toDoItemList getItemList];
+//        return self.todos;
     }
     if ([self.sortValue isEqual:@"Priority"]){
         ds = [self getSortDescriptorWithKey:@"priorityValue" isAscending:NO];
@@ -126,7 +133,8 @@
     else if ([self.sortValue isEqual:@"Dec Time to complete"]) {
         ds = [self getSortDescriptorWithKey:@"timeToComplete" isAscending:NO];
     }
-    NSArray* sortedArray = [self.todos sortedArrayUsingDescriptors:@[ds]];
+//    NSArray* sortedArray = [self.todos sortedArrayUsingDescriptors:@[ds]];
+    NSArray* sortedArray = [self.toDoItemList sortItemListWithDescriptor:ds];
     return  sortedArray;
 }
 
@@ -145,9 +153,11 @@
     NSInteger priorityValue = [self getPriorityValue:itemPriority];
     newItem.priorityValue = priorityValue;
     dispatch_async(dispatch_get_main_queue(), ^(void){
-        [self.todos addObject:newItem];
+        [self.toDoItemList addItemToList:newItem];
+//        [self.todos addObject:newItem];
         NSArray* sortedArray = [self sortAccordingToType];
-        self.todos = [NSMutableArray arrayWithArray:sortedArray];
+//        self.todos = [NSMutableArray arrayWithArray:sortedArray];
+        [self.toDoItemList setItemListNewValue:sortedArray];
         [self.todoList reloadData];
     });
     
@@ -170,9 +180,11 @@
     CGPoint pointOfDeletion = [sender convertPoint:CGPointZero toView:self.todoList];
     NSIndexPath *indexOfItemToBeDeleted = [self.todoList indexPathForRowAtPoint:pointOfDeletion];
     dispatch_async(dispatch_get_main_queue(), ^(void){
-        [self.todos removeObjectAtIndex:indexOfItemToBeDeleted.item];
+        [self.toDoItemList deleteItemToList:indexOfItemToBeDeleted.item];
+//        [self.todos removeObjectAtIndex:indexOfItemToBeDeleted.item];
         NSArray* sortedArray = [self sortAccordingToType];
-        self.todos = [NSMutableArray arrayWithArray:sortedArray];
+//        self.todos = [NSMutableArray arrayWithArray:sortedArray];
+        [self.toDoItemList setItemListNewValue:sortedArray];
         [self.todoList reloadData];
     });
 }

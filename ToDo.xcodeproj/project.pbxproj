@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC7766862662964300B8F4AA /* ToDoItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7766852662964300B8F4AA /* ToDoItemList.m */; };
+		CC7766882663782A00B8F4AA /* ToDoItemListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7766872663782A00B8F4AA /* ToDoItemListTests.m */; };
 		CC7BB96326590FA9007CBA00 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7BB96226590FA9007CBA00 /* AppDelegate.m */; };
 		CC7BB96626590FA9007CBA00 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7BB96526590FA9007CBA00 /* SceneDelegate.m */; };
 		CC7BB96926590FA9007CBA00 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7BB96826590FA9007CBA00 /* ViewController.m */; };
@@ -40,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC7766842662964300B8F4AA /* ToDoItemList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToDoItemList.h; sourceTree = "<group>"; };
+		CC7766852662964300B8F4AA /* ToDoItemList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoItemList.m; sourceTree = "<group>"; };
+		CC7766872663782A00B8F4AA /* ToDoItemListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoItemListTests.m; sourceTree = "<group>"; };
 		CC7BB95E26590FA9007CBA00 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7BB96126590FA9007CBA00 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CC7BB96226590FA9007CBA00 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -134,6 +139,8 @@
 				CC7BB99D26593598007CBA00 /* ToDoItemCell.m */,
 				CC7BB99F265950F8007CBA00 /* AddItemViewController.h */,
 				CC7BB9A0265950F8007CBA00 /* AddItemViewController.m */,
+				CC7766842662964300B8F4AA /* ToDoItemList.h */,
+				CC7766852662964300B8F4AA /* ToDoItemList.m */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -143,6 +150,7 @@
 			children = (
 				CC7BB97D26590FAB007CBA00 /* ToDoTests.m */,
 				CC7BB97F26590FAB007CBA00 /* Info.plist */,
+				CC7766872663782A00B8F4AA /* ToDoItemListTests.m */,
 			);
 			path = ToDoTests;
 			sourceTree = "<group>";
@@ -295,6 +303,7 @@
 			files = (
 				CC7BB96926590FA9007CBA00 /* ViewController.m in Sources */,
 				CC7BB99B2659316B007CBA00 /* ToDoItem.m in Sources */,
+				CC7766862662964300B8F4AA /* ToDoItemList.m in Sources */,
 				CC7BB9A1265950F8007CBA00 /* AddItemViewController.m in Sources */,
 				CC7BB96326590FA9007CBA00 /* AppDelegate.m in Sources */,
 				CC7BB97426590FAB007CBA00 /* main.m in Sources */,
@@ -307,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC7766882663782A00B8F4AA /* ToDoItemListTests.m in Sources */,
 				CC7BB97E26590FAB007CBA00 /* ToDoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

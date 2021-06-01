@@ -116,7 +116,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b7r-UH-oaC">
-                                        <rect key="frame" x="35" y="10" width="347" height="216"/>
+                                        <rect key="frame" x="34.5" y="9.5" width="347" height="216"/>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aw-T6-hDE">
                                         <rect key="frame" x="381.5" y="104.5" width="32.5" height="26"/>
